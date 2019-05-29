@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+/**
+ * HTML1
+ * Recipe Exercise
+ *
+ * @author Peter(dot)Sylwester(at)gmail(dot)com
+ * @version 1.00, 2017/09/18
+ * @requires normalize.css (or equivalent)
+ * 
+ */
+
+@import url("//fonts.googleapis.com/css?family=Roboto+Slab");
+
+body
+{
+  font-family: "Roboto Slab", serif;
+  line-height: 1.5;
+  background: url(../images/waves.gif);
+  margin: 0;
+}
+
+section
+{
+  width: 50%;
+  min-width: 566px;
+  margin: 0 auto;
+  padding: 40px;
+  background: cornsilk;
+  border: 1px solid white;
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.2);
+}
+
+h1
+{
+  position: relative;
+  font-size: 2em;
+  margin-bottom: -2em;
+  text-indent: 1em;
+  color: cornsilk;
+  z-index: 99;
+}
+
+h2
+{
+  color: coral;
+}
+
+figure
+{
+  margin: 0;
+}
+
+figure img
+{
+  border-bottom: 4px solid coral;
+}
+
+figcaption
+{
+  margin: 1em;
+}
+
+ol li
+{
+  margin: 0 3em 1em 0;
+}
+
+hr
+{
+  border: none;
+  border-top: 1px dotted coral;
+}

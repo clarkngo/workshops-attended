@@ -1,0 +1,773 @@
+AWS Cloud Practitioner Essentials.txt
+
+lance.cho@concur.com
+Sp---at1
+
+AWS Cloud Practitioner Essentials Course Introduction
+- define what the AWS Cloud is and the basic global infrastructure
+- describe the key services on the AWS platform and their common use cases
+- describe basic AWS Cloud architectural principles
+- describe basic security and compliance aspects of the AWS platform and the shared security model
+- define the billing, account management, and pricing models
+- identify sources of documentation or technical assistance
+- describe basic/core characteristics of deploying and operating in the AWS Cloud
+
+Prerequisites:
+- general IT technical knowledge
+- general IT business knowledge
+
+----------------------------------------------------------------------------
+Course Outline:
+- 1: AWS Cloud Concepts
+	- intro to cloud
+	- intro to aws cloud
+- 2: AWS Core Services
+	- overview of services and categories
+	- intro to aws global infrastructure
+	- intro to amazon vpc
+	- intro to security groups
+	- intro to amazon ec2
+	- intro to amazon elastic block store
+	- intro to amazon s3
+	- intro to aws database solutions
+- 3: AWS Security
+	- intro to aws security
+	- aws shared responsibility model
+	- aws access control and management
+	- aws security compliance programs
+	- aws security resources
+- 4: AWS Architecting
+	- intro to the well-architected framework
+	- reference architecture: fault tolerance and high availability
+	- reference architecture: web hosting
+- 5: AWS Pricing and Support
+	- fundamentals of pricing
+	- pricing details for
+		- ec2
+		- s3
+		- ebs
+		- amazon rds
+		- amazon cloudfront
+	- TCO calculator overview
+	- AWS support plans overview
+- Bonus material
+	- supplementary videos
+- Course summary
+----------------------------------------------------------------------------
+
+
+=============================
+Section 1: AWS Cloud Concepts
+=============================
+- Cloud computing
+	- After AWS
+		- initiated within seconds
+		- treat these as "temporary and disposable"
+		- free from the inflexibility and constraints
+		- more agile and efficient
+
+	- Agility
+		- speed
+		- experimentation
+		- culture of innovation
+
+AGILITY
+- increase speed and global reach
+	- global reach with a moment's notice
+	- new resources are a click away
+	- dramatic increase
+- increase experimentation
+	- operations as code
+	- safely experiment
+	- spin up servers in minutes for experimenting
+	- return or re-purpose servers
+	- testing using different configurations
+	- aws cloudformation enables templated environments
+- increase innovation
+	- experiment quickly with low cost/risk
+	- more experimentation
+	- discovery
+
+
+The AWS Infrastructure
+	- elasticity, scalability, and reliability of computing resources
+	- regions
+		- physical location in the world
+		- contains multiple AZs
+	- availability zones (AZs)
+		- one or more discrete data centers
+		- redundant power/networking/connectivity
+		- housed in separate facilities
+
+	- highly available
+		- Availability Zones
+		- Fault tolerance
+			- applications operational during component failure
+			- built-in redundancy of components
+		- high availability
+			- systems "always" functioning and accessible
+			- downtime is minimized as much as possible
+			- without human intervention
+		- elasticity, scalability, and high performance
+			- scale computing resources up or down easily
+				- quickly deploy new applications
+				- instantly scale up as the workload grows
+				- instantly shut down resources that are no longer required
+				- scale down and don't pay for the infrastructure
+			- AWS provides the elastic infrastructure to meet your needs
+				- use services at your own pace
+				- adapt their consumption
+				- launch new services or products
+				- accomodate new strategic directions
+			- Tools to run a wide range of applications
+			- Auto scaling and elastic load balancing
+				- scale up or down based on demand
+			- deploy your system in multiple regions
+				- lower latency and better experience
+			- innovative services and cutting-edge technology
+			- virtually any workload
+		- security and compliance
+			- customer retains control over region where data located
+			- security auditing often periodic and manual
+			- AWS cloud provides governance capabilities
+			- industry-leading capabilities that meet the strictest safety requirements
+			- data centers
+				- state-of-the-art electronic surveillance
+				- multi-factor access control systems
+				- staffed 24x7 by trained security guards
+				- access is strictly least-priviledged basis
+				- environmental systems minimize the impact of disruptions
+				- multiple regions and AZs enable resiliency
+			- security policy can be formalized and embedded with the design of your infrastructure
+		- Reliability
+			- high performing and reliable solutions
+			- implement solutions quickly and with limited friction
+			- Reliability:
+    			- ability to recover from failures
+    			- dynamically acquire resources to meet demand and mitigate disruptions
+    		- Must have well-planned foundation
+    			- handle changes in demand
+    			- detect failures and automatically heal itself
+			- achieve greater flexibility and capacity
+  			- reduce uncertainty of forecasting hardware needs
+  			- capacity and reliability that is difficult to match by on-premise solutions
+		- Pricing
+  			- pay as you go
+  			- avoid dedicating resources to infrastructure
+  			- benefits of pay-as-you-go
+    			- redirect focus to innovation and invention
+    			- reduce procurement complexity
+    			- enabling elasticity
+    			- adapt to changing business needs
+    			- improve responsiveness to changes
+    			- reducing risk or overprovisioning or missing capacity
+
+Which of the following is NOT an advantage of cloud computing over on-premise computing?
+- Pay for racking and stacking and powering servers
+
+Which of the ff AWS tools help your application scale up or down based on demand?
+- Auto Scaling
+- Elastic Load Balancing
+
+What is the number one reason customers are switching to cloud computing?
+- Agility
+
+What is the pricing model that allows AWS customers to pay for resources on as needed basis?
+- pay as you go
+
+Which of the ff are adv of aws cloud security
+- you retain complete control and ownership of your data region
+- multi factor access control system
+
+What is true about regions
+- physical location with multiple availability zones
+- each region is located in a spearate geographic area
+
+Which of the following are NOT a benefit of AWS cloud computing
+- multiple procurement cycles
+- high latency
+
+
+
+
+
+=============================
+Section 2: AWS Core Services
+=============================
+Services and Categories
+Intro to Documentation
+- compute
+- storage
+- database
+- networking & content delivery
+- security, identity, & compliance
+
+* AWS Services and Categories
+	- aws.amazon.com
+* AWS Global Infrastructure
+	- http://aws.amazon.com
+	- Regions
+	  - global network of regions and edge locations
+	  - hosts two or more availability zones
+	  - learn which region will help you optimize latency and reduce costs
+	  	- regions are geographic areas that host 2 or more availability zones
+	- Availability Zones (AZs)
+	  - collection of data centers within a region
+	    - isolated yet connected by vast low latency link
+	    - each AZ is physically distinct independent infrastructure
+	    - each AZ has its own uninterruptible power supply, backup generators, cooling equipment, networking, and connectivity
+	    - they are connected through multiple tier 1 infrastructures
+	  - isolate -- protect from failures
+	  - best pracice: multiple availability zones
+	- Edge Locations
+	  - hosts a content delivery network - Amazon CloudFront
+	  - deliver content to customers
+	  - delivered faster
+	  - typically located in highly populated areas
+	  - aws.amazon.com/cloudfront/details
+* Amazon Virtual Private Cloud (VPC)
+	  - aws.amazon.com/vpc
+	  - Kent Rademacher (Senior Technical )
+	  - Introduction
+	    - pay as you go on demand compute
+	    - networking aws services
+	    - a private, visual network in the AWS Cloud
+	      -  uses same concepts as on premise networking
+	    - allows complete control of network configuration
+	      - ability to isolate and expose resources inside VPC
+	    - offers several layers of security controls 
+	      - ability to allow and deny specific internet and internal traffic
+	    - other aws sevices deploy into VPC
+	      -services inherent security built into network
+	  - Features
+	    - Builds upon high availability of AWS Regions and Availability Zones
+	      - Amazon VPC lives within a Region
+	      - Multiple VPCs per account
+	    - Subnets
+	      - Used to divide Amazon VPC
+	      - Allows Amazon VPC to span multiple AZs
+	    - Route tables
+	      - control traffic going out of the subnets
+	    - Internet Gateway (IGW)
+	      - allows access to the internet from Amazon VPC
+	    - NAT Gateway
+	      - allows private subnet resources to access internet
+	    - Network Access Control Lists (NACL)
+	      - control access to subnets; stateless
+	  - Example Configuration (VPC)
+	  	- Test-VPC 10.0.0.0/16
+	  	  - create a subnet called "Subnet A1" 10.0.0.0/24
+	  	  - this subnet will live in Availability Zone A
+	  	  - create a subnet called "Subnet B1" 10.0.1.0/24
+	  	  - create a internet gateway "Test-IGW"
+	  - Summary
+	    - What have we accomplished?
+			- created VPC in Oregon region
+			- created an internet gateway
+			- created one public subnets
+			- created one private subnets
+	    - Next Steps
+	    	- learn about Route Tables and isolation methods
+	    	- learn about other Amazon VPC features like VPC endpoints and peering connections
+	    	- learn about security groups
+	    	- learn about Amazon Elastic Cloud Compute (EC2)
+	    	- learn about Amazon Relational Database Service (RDS)
+* Security Groups
+	- Anna Fox
+	- one of the highest priorities
+	- built-in firewalls
+	- Multiple security groups:
+		- Web Tier
+			- www server
+			- www server
+			- www server
+		- Application Tier
+			- app server
+			- app server
+			- app server
+		- Database Tier
+			- db server
+			- db server
+			- db server
+		- each tier is separated
+			- this means that all other ports are blocked except the stuff within the tier
+		- EC2 --> Network & Security --> Security Groups
+			- To create a security group
+				- Click 'Create Security Group'
+				- Attach to a source
+				- add description
+				- Add rules if needed
+					- inbound
+					- outbound
+* Compute Services
+	- AWS offers
+		- flexible
+		- cost effective
+	- Amazon EC2
+		- flexible configuration and control
+	- AWS Lambda
+		- pay only for what you use
+		- no administration
+	- AWS Lightsail
+		- has everything you need to jumpstart your machine
+	- Amazon ECS
+		- managed containers
+		- Container service on premis
+	- aws.amazon.com/products/compute
+
+* Amazon Elastic Compute Cloud (EC2)
+	- Mike Blackmer (Curriculum Developer)
+	- What is EC2?
+		- Elastic Compute Cloud
+		- Compute
+			- refers to the compute or server resource that are being presented
+			- Application Server
+			- Web Server
+			- Database Server
+			- Game Server
+			- Mail Server
+			- Media Server
+			- Catalog Server
+			- File Server
+			- Computing Server
+			- Proxy Server
+			- Etc.
+		- Cloud
+			- cloud hosted compute resources
+		- Elastic
+			- if properly configured, able to increase or decrease automatically depending on the demand of the service
+	- Amazon EC2 instances
+		- pay as you go
+		- broad selection of HW/SW
+		- global hosting
+		- aws.amazon.com/ec2
+	- product demonstration
+		- login to aws console
+		- choose a region
+		- launch ec2 wizard
+		- select AMI (SW)
+		- select instance type (HW)
+		- configure network
+		- configure storage
+		- oconfigure key pairs
+		- launch
+	- Services --> EC2 --> Launch Instance
+		- Amazon Machine Image (AMI)
+			- software load that comes with the instance of the launch
+			- marketplace with 3rd party images
+			- Amazon Linux AMI
+		- Choose an Instance Type
+			- 64 cores, t2 micro, etc
+		- Configure Instance Details
+			- number of instances: depending on what you need up to 100,000
+		- Configure Security Group
+			- can add ssh, http, etc
+			- to connect vis ssh, must have a key/pair
+		- Launch Instance                    
+
+* AWS Lambda
+	- Ian Falconer
+	- Overview
+		- is a compute service that lets you run code without provisioning or managing service
+		- fully managed serverless compute
+		- event-driven execution
+		- sub-second metering
+		- multiple languages supported
+		- How does AWS Lambda work
+			- No servers to manage
+			- continous scaling
+			- subsecond metering
+		- can be used for event driven computing
+		- Seattle --> Mobile App --> S3 --> AWS Lambda <--> Detect Object & Scenes
+			- Mobile app (user captures an image for their property listing)
+			- S3 (mobile app uploads the new image to S3)
+			- AWS Lambda (a lambda function is triggered and calls Rekognition)
+			- Detect Object & Scenes (Rekognition retrieves the image from S3 and returns labels
+				for the detected property and amenities)
+		- Operating serverless websites
+		- Event driven computing
+	- Demonstration
+		- Web backends
+			- S3 --> laptop <--> API Gateway <--> AWS Lambda --> DynamoDB
+	- Use Cases
+	- Summary
+		- connected tissue for AWS applications
+* AWS Elastic Beanstalk
+	- Wilson Santana
+	- Introduction
+		- How can I quickly get my application into the cloud?
+			- Elastic Beanstalk
+		- Platform as a Service
+		- Allows quick deployment of your applications
+		- Reduces management complexity
+		- Keeps control in your hands
+			- Choose your instance type
+			- Choose your database
+			- Set and adjust auto scaling
+			- update your application
+			- access server log files
+			- enablt https on load balancer
+		- Supports a large range of platforms
+			- Packer Builder
+			- Single Container, Multicontainer or Preconfigured Docker
+			- Go
+			- Java SE
+			- Java with Tomcat
+			- .NET on Windows Server with IIS
+			- Node.js
+			- PHP
+			- Python
+			- Ruby
+		- Elastic Beanstalk provides
+			- Application Service
+			- HTTP Service
+			- Operating System
+			- Language interpreter
+			- Host
+		- Easily Implemented
+		- Deployments and Updates
+										<<------------Upload version----------------|
+			- Create Application --> Upload Version --> Launch Environment --> Manage Environment
+										|-------deploy new version----------------->>
+	- Components
+	- Demonstration
+		- Create Elastic Beanstalk "BeanstalkDemo"
+		- Web server environment
+* Application Load Balancer
+	- Seph Robinson (Technical Trainer AWS)
+	- Service Introduction
+		- What is Application Load Balancer?
+			- second load balancer that is provided by Elastic Load balancer
+		- Enhanced Features
+			- Supported Protocols (HTTP2 and Websocket support)
+			- Cloudwatch Metrics (additional load balancem etrics and target group metric dimension)
+			- Access Logs (ability to see connection details for WebSocket connections)
+			- Health checks (insight into target and application health at more granular level)
+		- Additional Features
+			- Ability to route your requests
+			- Deletion Protection & Request Tracing
+			- Path and Host-based Routing
+				- path based provides rules that forward requests to different target groups
+				- host-based can be used to define rules that forward requests to different target group based on host name
+			- Native IPv6 Support
+			- AWS Web Applcation Firewall
+			- Dynamic Ports
+		- Ability to use containers to host your applications and use the Application Load Balancer
+			to route them
+		- Listeners
+			- is a process that checks for connection requests, using the protocol and port that you configure.
+				The rules that you define for a listener determine how the load balancer routes requests to the
+				targets in one or more target groups
+		- Target
+			- destination for traffic based on the established listener rules
+		- Target Group
+			- each target group routes requests to one or more registered targets using the protocol
+				 and port number specified. A target can be registered with multiple target groups.
+				 health checks can be configured on a per target group basis.
+	- Overview
+	- Use Case
+	- Demonstration
+		- EC2 console --> create instances
+		- Launching the application load balancer
+		- configuring routing
+		- registering targets
+		- verifying operation of the application load balancer
+* Elastic Load Balancer
+	- Seph Robinson
+	- Classic Load Balancer
+	- distributed software load balancing service that enables the use of many helpful features
+		packaged into a managed solutions
+	- Access through single point of access
+	- Decouple application environment
+	- Provide high availability and fault tolerance
+	- Increase elasticity and scalability
+	- Traffic Distribution
+		- Least OutStanding (HTTP/HTTPS)
+		- Classic Load Balancer
+		- Round Robin (TCP)
+	- also helps distributing traffic with multiple availability zones
+	- single exposed endpoint to provide access to backend instances
+	- sticky sessions bind a user's session for duration of a session
+	- Monitoring
+		- view http responses
+		- see number of healthy and unhealthy hosts
+		- filter metrics based on Availability Zones or load balancer
+	- Demonstration
+		- launching the classic load balancer
+		- configuring listeners and health checks
+		- registering instances
+		- verifying operation of the Classic Load Balancer
+* Auto Scaling
+	- Andy Cummings (Technical Trainer AWS)
+	- Helps you ensure that you have the correct nuber of Amazon EC2 instances available to handle 
+		the load for your application
+	- Amazon CloudWatch
+	- Launch Configuration --> Auto Scaling Group --> Auto Scaling Policy
+		- Launch Configuration (What)
+			- AMI
+			- Instance type
+			- Security Groups
+			- Roles
+		- Auto Scaling Group (Where)
+			- VPC and Subnet
+			- Load balancer
+			- min/ max instances
+			- desired capacity
+		- Auto Scaling Policy (when)
+			- scheduled
+			- on-demand
+			- scale-in/ scale-out policy
+	- Demonstration
+		- Create a launch configuration
+		- create an auto scaling group
+		- create an auto scaling policy
+		- trigger auto scaling
+		- open an EC2 service
+			- auto scaling groups
+				- create auto scaling group
+				- create a launch configuration
+				- Amazon AMI
+				- M4 large instance type
+* Amazon Elastic Block Store (EBS)
+	- Rafael Lopes
+	- choose between hdd and ssd types
+	- persistent and customizable block storage for ec2 instances
+	- replicated in the same availability zone
+	- backup using snapshots
+	- easy and transparent encryption
+	- elastic volumes
+	- EC2 --> Instances / Volumes (Elastic Block Store)
+		- elastic block must be created in the same availability zone of the instance
+		- Instance --> Connect --> copy the ssh command
+* Amazon Simple Storage Service (S3)
+	- managed cloud storage service
+	- store virtually unlimited number of objects
+	- access any time, from anywhere
+	- rich security controls
+		- Key (media/welcome.mp4)
+		- Object (the actual file)
+		- my-bucket-name (the bucket where the data is stored)
+	- Use cases
+		- storing application assets
+		- static web hosting
+		- backup & disaster recovery
+		- staging area for big data
+* Amazon Glacier
+	- regulatory requirements
+	- any data that you don't really need to access frequently
+	- less frequent access of data
+* Amazon Relational Database Service (RDS)
+	- Andy Cummings
+	- Challenges of Relational Databases
+		- server maintenance and energy footprint
+		- software install and patches
+		- database backups and high availability
+		- limits on scalability
+		- data security
+		- os install and patches
+	- primary focus becomes your data and optimizing your application
+	- AWS manages:
+		- os installation and patches
+	- AWS Amazon RDS
+		- DB Instance class
+			- CPU, memory, network performance
+		- DB instance storage
+			- magnetic, general purpose (ssd), provisioned IOPS
+		- DB Engines
+			- MySql
+			- Amazon Aurora
+			- SQL Server
+			- Postgres SQL
+			- Maria DB
+			- Oracle
+	- Amazon RDS in your Virtual Private Cloud
+		- VPC (Availability Zone 1)
+			- APP --> RDS DB
+		- if the master database instance fails, the standby database instance is automatically
+			brings up and becomes the master
+	- Amazon RDS Read Replicas
+		- Asynchronous replication method used
+		- Offload read queries from the master DB instance
+		- Ideal for read-heavy database workloads
+		- Read replica can be promoted to Master if needed
+	- no licensing constraints
+	- Summary
+		- high scalable
+		- high performance
+		- easy to administer
+		- available and durable
+		- secure and compliant
+* Amazon DynamoDB
+	- Rudy Valdez
+	- Amazon DynamoDB overview
+		- NoSQL database tables as a service
+		- store as many items as you want
+		- items may have different attributes
+		- low-latency queries
+		- scalable read/write throughput
+	- Creating a new table
+	- Creating items
+	- Query and Scan for results
+	- Common use cases
+		- Web, Mobile Apps, Internet of Things
+	- Also used in latency heavy applications
+	- Partitioning
+		- As data grows, table partitioned by key
+		- QUERY by Key to find items efficiently
+		- SCAN to find items by attribute
+	- Items in a table must have Keys
+		- Single Key
+			- Partition Key -- Attributes
+		- Compound Key
+			- Partition Key -- Sort Key -- Attributes
+	- DynamoDB
+		- select region (Oregon for example)
+		- Table Name, Primary Key (Partition key)
+	- managed nosql database service
+	- can be used as a datastore for applications which need to:
+		- support/ store large amount of data
+		- support high request volume
+		- require low-latency query performance
+* Amazon Redshift
+	- Mark Fei
+	- Amazon Redshift is a fast, fully managed data warehouse that makes it simple and cost
+		effective to analyze all your data using standard SQL and your existing business intelligence toold
+	- allows you to run complex analytic queries against petabytes of structured data using sophisticated query optimization 
+		columnar storage on high performance long disks, and massively parallel query execution
+	- most results come back in seconds
+	- employs a massively parallel processing architecture coupled with columnar storage and 
+		automatic compression to deliver very fast query performance over petabyte size data sets
+	- Enterprise Data Warehouse (EDW)
+		- primary goal is agility
+		- migrate at a pace that customers are comfortable with
+		- experiment without a large upfront cost or commitment
+		- respond faster to business needs
+	- Use Case: Big Data
+		- low price point for small customers
+		- managed service for ease of deployment and maintenance
+		- focus more on data and less on database management
+	- Use Case: SaaS
+		- scale the data warehouse capacity as demand grows
+		- add analytic functionality to applications
+		- reduce hardware and software costs by an order of magnitude
+	- Demo
+		- Cluster identifier
+		- 
+* Amazon Aurora
+	- Kirsten Dupart
+	- Amazon Aurora is a MySQL relational database engine that combines the speed and availability of high-end commercial
+		databases with the simplicity and cost-effectiveness of open-source databases
+	- Benefits
+		- Fase and avaiable, Simple, Compatible, Pay-as-you-go, Managed Service
+		- fast, available
+		- offers approximately five times the performance of MySQL as well as giving you high availability with just a few mouse clicks
+		- is simple to set up and uses SQL queries that you may already use
+		- drop in compatibility with MySQL 5.6 using InnoDB storage engine
+		- pay-as-you-go service that ensures you only pay for the services that you're using
+		- managed service
+		- integrates with AWS Database Migration Service, AWS Schema Conversion Tool
+			- heps move data set into Amazon Aurora seamlessly and with great alacrity
+		- Amazon RDS vs Amazon Aurora
+			- Amazon Aurora is highly available and stores six copies of your data across three AZs
+			- continuous backups to Amazon S3
+		- Amazon RDS console --> Instances --> Launch new db instance --> Amazon Aurora
+			- can choose how much RAM/ CPU
+			- multi AZ deployment or not
+* AWS Trusted Advisor
+	- Tipu Qureshi, Alex Buell
+	- as your AWS resources/needs grow, your account can be too many resources to keep track of
+	- potentially have orphaned resources that are not optimized and just sitting there
+	- can also have resources that are not optimized for fault tolerance/ performance/ security
+	- is a tool that gives the best practices and checks all of your resources in your account to see
+		if they're in accordance with those best practices
+	- four different categories:
+		- security
+		- fault tolerance
+		- performance
+		- cost optimization
+	- Checks:
+		- red: immediate action
+		- yellow: warrants investigation
+		- green: rock star and you're set
+	- Underutilized EC2 Instance Check
+		- 
+* Knowledge Check (Security Groups)
+
+Which of the following is NOT an AWS region?
+- Moscow
+
+Which of the following statements are true about AZs
+- single zone can span multiple data centers
+- multiple zones are connected by low latency network links
+
+Which of the following is true about security groups
+- acts as a virtual firewall to control inbound and outbound traffic
+- all inbound traffic is denied and outbound traffic is allowed by default
+
+How does an edge location help end users?
+- reduce latency
+An edge location is where end users access services located at AWS. They are located in most of the major cities around the world and are specifically used by CloudFront (CDN) to distribute content to end user to reduce latency.
+
+What AWS tool utilizes edge locations to cache content and reduce latency?
+- AWS CloudFront
+
+
+=============================
+Section 3:
+=============================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

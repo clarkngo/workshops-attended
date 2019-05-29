@@ -1,0 +1,69 @@
+Auth0 Ambassador Training w/ Ben Dechrai
+
+Dev evangelist in Auth0 in Australia
+
+Securing communications
+
+- Alice sends message verbally to Bob and vice versa
+
+- Alice to Central Server (or courier before) to Bob
+
+- Alice then Over SSL to Central Server then Over SSL to Bob
+  - unencrypted at rest in the server 
+
+- Alice then Over SSL Central Server encrypt msg, decrypt msg then Over SSL to Bob
+  - Still unencrypted at the endpoints in the Central Server  
+  - Keys are still not secured
+
+- Alice encrypts msg with bob's public key, send encrypted msg, to Central Server
+  then send ecrypted msg to Bob, Bob decrypts the msg
+
+Issue on Software as a Service
+- Alice requests Login to SaaS Server, SaaS Server gets statement from alice's bank,
+  Alice's banks send back response then SaaS Server sends back Dashboard to Alice
+- Pay for subscription, account view
+- view statement, statement view
+
+Zero Knowledge situation
+Alice to Identity Provider to ZERO KNOWLEDGE to Transaction Server to Alice's bank
+- Zero Knowledge - storing data without knowledge of what it Issue
+
+Profile Encryption
+- USER
+  - Subscription Plan
+  - Account Password
+  These are unlocked with Account Password
+
+- PROFILE
+  - Account
+  - References
+  Unlocked with Profile Password
+
+Every account has their own public and private key
+
+Processing Encrypted Data
+- you can encrypt and encrypted data
+- hard to tag/label encrypted data
+
+Client Side Processing
+
+Sharing Data Anonymously Between Users
+
+Issues
+- Private Keys on Profile Server
+- Processing must be done on the Client Side
+- Network Graphing, makes animonity harder
+
+Where to Start?
+- Don't worry! Keep it simple!
+- Work out your risk profile
+- Document the data you store, be frugal with the data you have
+- Identify which bits of data would be a nightmare if leaked
+- Identify what you can offload to a third party. Also, this is their selling point
+  - you don't need to store password, use Auth0
+  - you don't need to store CC, use Stripe
+- Work out the best protection option
+  - Encrypt
+  - Store Anonymously
+  - Store Normally, i.e. timestamp is fine to leak
+  
